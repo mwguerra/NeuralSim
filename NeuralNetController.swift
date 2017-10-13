@@ -30,7 +30,6 @@ class NeuralNetController: NSObject {
     // http://www.electronics-tutorials.ws/category/logic
     
     // ** XOR Padrão
-// /*
     static let xorInputData = [[0.0,0.0,0.0],
                                [0.0,0.0,1.0],
                                [0.0,1.0,0.0],
@@ -47,27 +46,8 @@ class NeuralNetController: NSObject {
                                 [0.0],
                                 [0.0],
                                 [1.0]]
-// */
-/*
-     static let xorInputData = [[-2.0,-2.0,-2.0],
-                             [-2.0,-2.0,2.0],
-                             [-2.0,2.0,-2.0],
-                             [-2.0,2.0,2.0],
-                             [2.0,-2.0,-2.0],
-                             [2.0,-2.0,2.0],
-                             [2.0,2.0,-2.0],
-                             [2.0,2.0,2.0]]
-     static let xorOutputData = [[0.0],
-                                 [1.0],
-                                 [1.0],
-                                 [0.0],
-                                 [1.0],
-                                 [0.0],
-                                 [0.0],
-                                 [1.0]]
-*/
  
-     // ** AND Padrão
+    // ** AND Padrão
     static let andInputData = [[0.0,0.0,0.0],
                                [0.0,0.0,1.0],
                                [0.0,1.0,0.0],
