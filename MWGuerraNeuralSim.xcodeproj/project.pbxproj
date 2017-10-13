@@ -1,0 +1,616 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D0EEDDE1F88436900F6D729 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0EEDDD1F88436900F6D729 /* AppDelegate.swift */; };
+		0D0EEDE01F88436900F6D729 /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0EEDDF1F88436900F6D729 /* HelpVC.swift */; };
+		0D0EEDE31F88436900F6D729 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D0EEDE11F88436900F6D729 /* Main.storyboard */; };
+		0D0EEDE51F88436900F6D729 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D0EEDE41F88436900F6D729 /* Assets.xcassets */; };
+		0D0EEDE81F88436900F6D729 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D0EEDE61F88436900F6D729 /* LaunchScreen.storyboard */; };
+		0D0EEDF31F88436900F6D729 /* MWGuerraNeuralSimTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0EEDF21F88436900F6D729 /* MWGuerraNeuralSimTests.swift */; };
+		0D0EEDFE1F88436900F6D729 /* MWGuerraNeuralSimUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0EEDFD1F88436900F6D729 /* MWGuerraNeuralSimUITests.swift */; };
+		0D0EEE0E1F887F9F00F6D729 /* TrainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0EEE0D1F887F9F00F6D729 /* TrainingVC.swift */; };
+		0D0EEE101F887FD100F6D729 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0EEE0F1F887FD100F6D729 /* TestVC.swift */; };
+		0D0EEE131F88811B00F6D729 /* ConfigTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0EEE121F88811B00F6D729 /* ConfigTableVC.swift */; };
+		0D0EEE151F89F31B00F6D729 /* NeuralNetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0EEE141F89F31B00F6D729 /* NeuralNetController.swift */; };
+		0D4863A21F8C368A00A01B98 /* TrainingTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4863A11F8C368A00A01B98 /* TrainingTVCell.swift */; };
+		0D91C9281F8E66E300B1E290 /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0D91C92A1F8E66E300B1E290 /* Localized.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0D0EEDEF1F88436900F6D729 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D0EEDD21F88436900F6D729 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D0EEDD91F88436900F6D729;
+			remoteInfo = MWGuerraNeuralSim;
+		};
+		0D0EEDFA1F88436900F6D729 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0D0EEDD21F88436900F6D729 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D0EEDD91F88436900F6D729;
+			remoteInfo = MWGuerraNeuralSim;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0D0EEDDA1F88436900F6D729 /* MWGuerraNeuralSim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MWGuerraNeuralSim.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D0EEDDD1F88436900F6D729 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0D0EEDDF1F88436900F6D729 /* HelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
+		0D0EEDE21F88436900F6D729 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0D0EEDE41F88436900F6D729 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0D0EEDE71F88436900F6D729 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0D0EEDE91F88436900F6D729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D0EEDEE1F88436900F6D729 /* MWGuerraNeuralSimTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MWGuerraNeuralSimTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D0EEDF21F88436900F6D729 /* MWGuerraNeuralSimTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWGuerraNeuralSimTests.swift; sourceTree = "<group>"; };
+		0D0EEDF41F88436900F6D729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D0EEDF91F88436900F6D729 /* MWGuerraNeuralSimUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MWGuerraNeuralSimUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D0EEDFD1F88436900F6D729 /* MWGuerraNeuralSimUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWGuerraNeuralSimUITests.swift; sourceTree = "<group>"; };
+		0D0EEDFF1F88436900F6D729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D0EEE0D1F887F9F00F6D729 /* TrainingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingVC.swift; sourceTree = "<group>"; };
+		0D0EEE0F1F887FD100F6D729 /* TestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
+		0D0EEE121F88811B00F6D729 /* ConfigTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigTableVC.swift; sourceTree = "<group>"; };
+		0D0EEE141F89F31B00F6D729 /* NeuralNetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeuralNetController.swift; sourceTree = "<group>"; };
+		0D4863A11F8C368A00A01B98 /* TrainingTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingTVCell.swift; sourceTree = "<group>"; };
+		0D91C9241F8E666F00B1E290 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
+		0D91C9251F8E666F00B1E290 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		0D91C9291F8E66E300B1E290 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localized.strings; sourceTree = "<group>"; };
+		0D91C92B1F8E66E700B1E290 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localized.strings"; sourceTree = "<group>"; };
+		0D91C92D1F8E6A4E00B1E290 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		0D91C92F1F8E6A6600B1E290 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0D0EEDD71F88436900F6D729 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D0EEDEB1F88436900F6D729 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D0EEDF61F88436900F6D729 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D0EEDD11F88436900F6D729 = {
+			isa = PBXGroup;
+			children = (
+				0D0EEE141F89F31B00F6D729 /* NeuralNetController.swift */,
+				0D0EEDDC1F88436900F6D729 /* MWGuerraNeuralSim */,
+				0D0EEDF11F88436900F6D729 /* MWGuerraNeuralSimTests */,
+				0D0EEDFC1F88436900F6D729 /* MWGuerraNeuralSimUITests */,
+				0D0EEDDB1F88436900F6D729 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0D0EEDDB1F88436900F6D729 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0D0EEDDA1F88436900F6D729 /* MWGuerraNeuralSim.app */,
+				0D0EEDEE1F88436900F6D729 /* MWGuerraNeuralSimTests.xctest */,
+				0D0EEDF91F88436900F6D729 /* MWGuerraNeuralSimUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0D0EEDDC1F88436900F6D729 /* MWGuerraNeuralSim */ = {
+			isa = PBXGroup;
+			children = (
+				0D0EEDDD1F88436900F6D729 /* AppDelegate.swift */,
+				0D0EEE111F887FDB00F6D729 /* ViewControllers */,
+				0D0EEDE11F88436900F6D729 /* Main.storyboard */,
+				0D0EEDE61F88436900F6D729 /* LaunchScreen.storyboard */,
+				0D91C92A1F8E66E300B1E290 /* Localized.strings */,
+				0D0EEDE41F88436900F6D729 /* Assets.xcassets */,
+				0D0EEDE91F88436900F6D729 /* Info.plist */,
+			);
+			path = MWGuerraNeuralSim;
+			sourceTree = "<group>";
+		};
+		0D0EEDF11F88436900F6D729 /* MWGuerraNeuralSimTests */ = {
+			isa = PBXGroup;
+			children = (
+				0D0EEDF21F88436900F6D729 /* MWGuerraNeuralSimTests.swift */,
+				0D0EEDF41F88436900F6D729 /* Info.plist */,
+			);
+			path = MWGuerraNeuralSimTests;
+			sourceTree = "<group>";
+		};
+		0D0EEDFC1F88436900F6D729 /* MWGuerraNeuralSimUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0D0EEDFD1F88436900F6D729 /* MWGuerraNeuralSimUITests.swift */,
+				0D0EEDFF1F88436900F6D729 /* Info.plist */,
+			);
+			path = MWGuerraNeuralSimUITests;
+			sourceTree = "<group>";
+		};
+		0D0EEE111F887FDB00F6D729 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0D0EEDDF1F88436900F6D729 /* HelpVC.swift */,
+				0D0EEE121F88811B00F6D729 /* ConfigTableVC.swift */,
+				0D0EEE0D1F887F9F00F6D729 /* TrainingVC.swift */,
+				0D4863A11F8C368A00A01B98 /* TrainingTVCell.swift */,
+				0D0EEE0F1F887FD100F6D729 /* TestVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0D0EEDD91F88436900F6D729 /* MWGuerraNeuralSim */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D0EEE021F88436900F6D729 /* Build configuration list for PBXNativeTarget "MWGuerraNeuralSim" */;
+			buildPhases = (
+				0D0EEDD61F88436900F6D729 /* Sources */,
+				0D0EEDD71F88436900F6D729 /* Frameworks */,
+				0D0EEDD81F88436900F6D729 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MWGuerraNeuralSim;
+			productName = MWGuerraNeuralSim;
+			productReference = 0D0EEDDA1F88436900F6D729 /* MWGuerraNeuralSim.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0D0EEDED1F88436900F6D729 /* MWGuerraNeuralSimTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D0EEE051F88436900F6D729 /* Build configuration list for PBXNativeTarget "MWGuerraNeuralSimTests" */;
+			buildPhases = (
+				0D0EEDEA1F88436900F6D729 /* Sources */,
+				0D0EEDEB1F88436900F6D729 /* Frameworks */,
+				0D0EEDEC1F88436900F6D729 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0D0EEDF01F88436900F6D729 /* PBXTargetDependency */,
+			);
+			name = MWGuerraNeuralSimTests;
+			productName = MWGuerraNeuralSimTests;
+			productReference = 0D0EEDEE1F88436900F6D729 /* MWGuerraNeuralSimTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0D0EEDF81F88436900F6D729 /* MWGuerraNeuralSimUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0D0EEE081F88436900F6D729 /* Build configuration list for PBXNativeTarget "MWGuerraNeuralSimUITests" */;
+			buildPhases = (
+				0D0EEDF51F88436900F6D729 /* Sources */,
+				0D0EEDF61F88436900F6D729 /* Frameworks */,
+				0D0EEDF71F88436900F6D729 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0D0EEDFB1F88436900F6D729 /* PBXTargetDependency */,
+			);
+			name = MWGuerraNeuralSimUITests;
+			productName = MWGuerraNeuralSimUITests;
+			productReference = 0D0EEDF91F88436900F6D729 /* MWGuerraNeuralSimUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0D0EEDD21F88436900F6D729 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Marcelo Wanderley Guerra";
+				TargetAttributes = {
+					0D0EEDD91F88436900F6D729 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					0D0EEDED1F88436900F6D729 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0D0EEDD91F88436900F6D729;
+					};
+					0D0EEDF81F88436900F6D729 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0D0EEDD91F88436900F6D729;
+					};
+				};
+			};
+			buildConfigurationList = 0D0EEDD51F88436900F6D729 /* Build configuration list for PBXProject "MWGuerraNeuralSim" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"pt-BR",
+			);
+			mainGroup = 0D0EEDD11F88436900F6D729;
+			productRefGroup = 0D0EEDDB1F88436900F6D729 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0D0EEDD91F88436900F6D729 /* MWGuerraNeuralSim */,
+				0D0EEDED1F88436900F6D729 /* MWGuerraNeuralSimTests */,
+				0D0EEDF81F88436900F6D729 /* MWGuerraNeuralSimUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0D0EEDD81F88436900F6D729 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D91C9281F8E66E300B1E290 /* Localized.strings in Resources */,
+				0D0EEDE81F88436900F6D729 /* LaunchScreen.storyboard in Resources */,
+				0D0EEDE51F88436900F6D729 /* Assets.xcassets in Resources */,
+				0D0EEDE31F88436900F6D729 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D0EEDEC1F88436900F6D729 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D0EEDF71F88436900F6D729 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0D0EEDD61F88436900F6D729 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D0EEE131F88811B00F6D729 /* ConfigTableVC.swift in Sources */,
+				0D4863A21F8C368A00A01B98 /* TrainingTVCell.swift in Sources */,
+				0D0EEE101F887FD100F6D729 /* TestVC.swift in Sources */,
+				0D0EEE0E1F887F9F00F6D729 /* TrainingVC.swift in Sources */,
+				0D0EEDE01F88436900F6D729 /* HelpVC.swift in Sources */,
+				0D0EEE151F89F31B00F6D729 /* NeuralNetController.swift in Sources */,
+				0D0EEDDE1F88436900F6D729 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D0EEDEA1F88436900F6D729 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D0EEDF31F88436900F6D729 /* MWGuerraNeuralSimTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0D0EEDF51F88436900F6D729 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D0EEDFE1F88436900F6D729 /* MWGuerraNeuralSimUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0D0EEDF01F88436900F6D729 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0D0EEDD91F88436900F6D729 /* MWGuerraNeuralSim */;
+			targetProxy = 0D0EEDEF1F88436900F6D729 /* PBXContainerItemProxy */;
+		};
+		0D0EEDFB1F88436900F6D729 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0D0EEDD91F88436900F6D729 /* MWGuerraNeuralSim */;
+			targetProxy = 0D0EEDFA1F88436900F6D729 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0D0EEDE11F88436900F6D729 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D0EEDE21F88436900F6D729 /* Base */,
+				0D91C9241F8E666F00B1E290 /* pt-BR */,
+				0D91C92D1F8E6A4E00B1E290 /* en */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0D0EEDE61F88436900F6D729 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D0EEDE71F88436900F6D729 /* Base */,
+				0D91C9251F8E666F00B1E290 /* pt-BR */,
+				0D91C92F1F8E6A6600B1E290 /* en */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		0D91C92A1F8E66E300B1E290 /* Localized.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0D91C9291F8E66E300B1E290 /* en */,
+				0D91C92B1F8E66E700B1E290 /* pt-BR */,
+			);
+			name = Localized.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0D0EEE001F88436900F6D729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0D0EEE011F88436900F6D729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0D0EEE031F88436900F6D729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GD59775V2C;
+				INFOPLIST_FILE = MWGuerraNeuralSim/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mwguerra.MWGuerraNeuralSim;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0D0EEE041F88436900F6D729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GD59775V2C;
+				INFOPLIST_FILE = MWGuerraNeuralSim/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mwguerra.MWGuerraNeuralSim;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0D0EEE061F88436900F6D729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GD59775V2C;
+				INFOPLIST_FILE = MWGuerraNeuralSimTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mwguerra.MWGuerraNeuralSimTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MWGuerraNeuralSim.app/MWGuerraNeuralSim";
+			};
+			name = Debug;
+		};
+		0D0EEE071F88436900F6D729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GD59775V2C;
+				INFOPLIST_FILE = MWGuerraNeuralSimTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mwguerra.MWGuerraNeuralSimTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MWGuerraNeuralSim.app/MWGuerraNeuralSim";
+			};
+			name = Release;
+		};
+		0D0EEE091F88436900F6D729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GD59775V2C;
+				INFOPLIST_FILE = MWGuerraNeuralSimUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mwguerra.MWGuerraNeuralSimUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MWGuerraNeuralSim;
+			};
+			name = Debug;
+		};
+		0D0EEE0A1F88436900F6D729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GD59775V2C;
+				INFOPLIST_FILE = MWGuerraNeuralSimUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mwguerra.MWGuerraNeuralSimUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MWGuerraNeuralSim;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0D0EEDD51F88436900F6D729 /* Build configuration list for PBXProject "MWGuerraNeuralSim" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D0EEE001F88436900F6D729 /* Debug */,
+				0D0EEE011F88436900F6D729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D0EEE021F88436900F6D729 /* Build configuration list for PBXNativeTarget "MWGuerraNeuralSim" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D0EEE031F88436900F6D729 /* Debug */,
+				0D0EEE041F88436900F6D729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D0EEE051F88436900F6D729 /* Build configuration list for PBXNativeTarget "MWGuerraNeuralSimTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D0EEE061F88436900F6D729 /* Debug */,
+				0D0EEE071F88436900F6D729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0D0EEE081F88436900F6D729 /* Build configuration list for PBXNativeTarget "MWGuerraNeuralSimUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0D0EEE091F88436900F6D729 /* Debug */,
+				0D0EEE0A1F88436900F6D729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0D0EEDD21F88436900F6D729 /* Project object */;
+}

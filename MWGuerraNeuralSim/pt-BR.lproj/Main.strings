@@ -1,0 +1,163 @@
+
+/* Class = "UILabel"; text = "Neurônios"; ObjectID = "12T-Ns-7pv"; */
+"12T-Ns-7pv.text" = "Neurônios";
+
+/* Class = "UILabel"; text = "Label #3"; ObjectID = "1kK-W6-bHO"; */
+"1kK-W6-bHO.text" = "Label #3";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "20V-6z-x6E"; */
+"20V-6z-x6E.text" = "2";
+
+/* Class = "UILabel"; text = "0.4"; ObjectID = "2HS-Sd-Deh"; */
+"2HS-Sd-Deh.text" = "0.4";
+
+/* Class = "UITextView"; text = "Este aplicativo implementa uma rede neural apenas para fins didáticos.  A rede neural implementada é do tipo feedforward, com aprendizagem supervisionada utilizando backpropagation.
+ 
+ São disponibilizadas 3 entradas, 1 saída e uma camada intermediária (hidden layer) com número variável de neurônios. Todas as configurações podem ser feitas a partir da tela de configuração.
+ 
+ Redes neurais não entendem variáveis abstratas, como nomes ou se está quente ou frio. Elas precisam receber valores numéricos que consigam interpretar. Os valores mínimos e máximos de entrada e saída de cada neurônio depende, principalmente, da função de ativação escolhida para cada neurônio. Por este motivo é importante entender o comportamento e limites de cada função e suas derivadas.
+ 
+ Para facilitar os testes, foi implementada internamente à aplicação uma normalização, variando para cada função de ativação, que transporta as variáveis de entrada de 0 (zero) a 1 (um), para a faixa de operação da função. Isto significa que todas as variáveis inseridas nesta aplicação devem ser normalizadas considerando o valor mínimo de 0 (zero) e máximo de 1 (um).
+ 
+ Exemplos de normalização de variáveis:
+ - Idade: de 0 a 100 anos
+ - Idade normalizada: idade / 100 = 0 a 1
+ 
+ - Salário: considerados até 12 mil
+ - Salário normalizado: salário / 12000 = 0,5 para 6000 e 1 para 12000
+ 
+ Redes neurais como esta somente podem dar respostas para padrões que foram treinadas para processar. Portanto, a escolha das variáveis de teste também são críticas para o resultado final.
+"; ObjectID = "2WM-rW-opf"; */
+"2WM-rW-opf.text" = "Este aplicativo implementa uma rede neural apenas para fins didáticos.\n\nA rede neural implementada é do tipo feedforward, com aprendizagem supervisionada utilizando backpropagation.\n\nSão disponibilizadas 3 entradas, 1 saída e uma camada intermediária (hidden layer) com número variável de neurônios. Todas as configurações podem ser feitas a partir da tela de configuração.\n\nRedes neurais não entendem variáveis abstratas, como nomes ou se está quente ou frio. Elas precisam receber valores numéricos que consigam interpretar. Os valores mínimos e máximos de entrada e saída de cada neurônio depende, principalmente, da função de ativação escolhida para cada neurônio. Por este motivo é importante entender o comportamento e limites de cada função e suas derivadas.\n\nPara facilitar os testes, foi implementada internamente à aplicação uma normalização, variando para cada função de ativação, que transporta as variáveis de entrada de 0 (zero) a 1 (um), para a faixa de operação da função. Isto significa que todas as variáveis inseridas nesta aplicação devem ser normalizadas considerando o valor mínimo de 0 (zero) e máximo de 1 (um).\n\nExemplos de normalização de variáveis:\n\n- Idade: de 0 a 100 anos\n\n- Idade normalizada: idade / 100 = 0 a 1\n\n- Salário: considerados até 12 mil\n\n- Salário normalizado: salário / 12000 = 0,5 para 6000 e 1 para 12000\n\nRedes neurais como esta somente podem dar respostas para padrões que foram treinadas para processar. Portanto, a escolha das variáveis de teste também são críticas para o resultado final.";
+
+/* Class = "UILabel"; text = "500"; ObjectID = "3B8-Ki-uYe"; */
+"3B8-Ki-uYe.text" = "500";
+
+/* Class = "UITableViewSection"; headerTitle = "Variáveis de Entrada"; ObjectID = "3dh-ra-2is"; */
+"3dh-ra-2is.headerTitle" = "Variáveis de Entrada";
+
+/* Class = "UILabel"; text = "Label #1"; ObjectID = "3kY-90-xRY"; */
+"3kY-90-xRY.text" = "Label #1";
+
+/* Class = "UITextField"; placeholder = "Normalizado"; ObjectID = "5Zh-hr-PzD"; */
+"5Zh-hr-PzD.placeholder" = "Normalizado";
+
+/* Class = "UITableViewSection"; headerTitle = "Dados de Treinamento"; ObjectID = "7RL-C0-ZPC"; */
+"7RL-C0-ZPC.headerTitle" = "Dados de Treinamento";
+
+/* Class = "UILabel"; text = "Aprendizado"; ObjectID = "8dH-yn-WSM"; */
+"8dH-yn-WSM.text" = "Aprendizado";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "9XS-kf-OeK"; */
+"9XS-kf-OeK.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Ex: Idade"; ObjectID = "AFx-0W-tMN"; */
+"AFx-0W-tMN.placeholder" = "Ex: Idade";
+
+/* Class = "UILabel"; text = "Exemplo Vendas"; ObjectID = "Ak2-jL-UBQ"; */
+"Ak2-jL-UBQ.text" = "Exemplo Vendas";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "BCz-SF-gh0"; */
+"BCz-SF-gh0.text" = "Label";
+
+/* Class = "UIViewController"; title = "Instruções"; ObjectID = "BYZ-38-t0r"; */
+"BYZ-38-t0r.title" = "Instruções";
+
+/* Class = "UITabBarItem"; title = "Configuração"; ObjectID = "BqQ-kY-Wyv"; */
+"BqQ-kY-Wyv.title" = "Configuração";
+
+/* Class = "UITabBarItem"; title = "Explicação"; ObjectID = "Bzf-Lq-qdg"; */
+"Bzf-Lq-qdg.title" = "Explicação";
+
+/* Class = "UILabel"; text = "Título #1"; ObjectID = "Bzx-V4-yFn"; */
+"Bzx-V4-yFn.text" = "Título #1";
+
+/* Class = "UIBarButtonItem"; title = "Treinar"; ObjectID = "G7Q-cf-hqE"; */
+"G7Q-cf-hqE.title" = "Treinar";
+
+/* Class = "UITextField"; placeholder = "Normalizado"; ObjectID = "K8M-Ra-wOL"; */
+"K8M-Ra-wOL.placeholder" = "Normalizado";
+
+/* Class = "UILabel"; text = "Exemplo AND"; ObjectID = "Ker-pB-Ug1"; */
+"Ker-pB-Ug1.text" = "Exemplo AND";
+
+/* Class = "UILabel"; text = "Função"; ObjectID = "Ly7-uu-WyC"; */
+"Ly7-uu-WyC.text" = "Função";
+
+/* Class = "UITableViewSection"; headerTitle = "Rede Neural"; ObjectID = "OPj-kI-ZXH"; */
+"OPj-kI-ZXH.headerTitle" = "Rede Neural";
+
+/* Class = "UIBarButtonItem"; title = "Executar"; ObjectID = "RMN-JP-j52"; */
+"RMN-JP-j52.title" = "Executar";
+
+/* Class = "UILabel"; text = "Digite acima o valor normalizado das entradas e execute a rede neural para avaliar a resposta"; ObjectID = "S1z-6z-RBZ"; */
+"S1z-6z-RBZ.text" = "Digite acima o valor normalizado das entradas e execute a rede neural para avaliar a resposta";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "SG5-i8-Otc"; */
+"SG5-i8-Otc.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Testes"; ObjectID = "UeC-wW-I1D"; */
+"UeC-wW-I1D.title" = "Testes";
+
+/* Class = "UITabBarItem"; title = "Treinamento"; ObjectID = "Ure-su-VE0"; */
+"Ure-su-VE0.title" = "Treinamento";
+
+/* Class = "UILabel"; text = "Epoch"; ObjectID = "Vht-nS-DuR"; */
+"Vht-nS-DuR.text" = "Epoch";
+
+/* Class = "UINavigationItem"; title = "Configuração"; ObjectID = "WA0-C1-Q9M"; */
+"WA0-C1-Q9M.title" = "Configuração";
+
+/* Class = "UINavigationItem"; title = "Teste"; ObjectID = "XgH-2T-oWt"; */
+"XgH-2T-oWt.title" = "Teste";
+
+/* Class = "UILabel"; text = "Título #1"; ObjectID = "bHQ-TR-QSJ"; */
+"bHQ-TR-QSJ.text" = "Título #1";
+
+/* Class = "UILabel"; text = "Exemplo OR"; ObjectID = "c1G-7q-Zek"; */
+"c1G-7q-Zek.text" = "Exemplo OR";
+
+/* Class = "UITableViewSection"; headerTitle = "Variáveis de Saída"; ObjectID = "de0-oW-Enr"; */
+"de0-oW-Enr.headerTitle" = "Variáveis de Saída";
+
+/* Class = "UILabel"; text = "Título #2"; ObjectID = "fVj-QL-AKg"; */
+"fVj-QL-AKg.text" = "Título #2";
+
+/* Class = "UIBarButtonItem"; title = "Retreinar"; ObjectID = "fmN-jI-hFd"; */
+"fmN-jI-hFd.title" = "Retreinar";
+
+/* Class = "UITextField"; placeholder = "Ex: Compra de Produto"; ObjectID = "htc-nQ-4fF"; */
+"htc-nQ-4fF.placeholder" = "Ex: Compra de Produto";
+
+/* Class = "UITextField"; placeholder = "Normalizado"; ObjectID = "iz3-H2-46Y"; */
+"iz3-H2-46Y.placeholder" = "Normalizado";
+
+/* Class = "UITextField"; placeholder = "Ex: Sexo"; ObjectID = "jHC-zL-Abj"; */
+"jHC-zL-Abj.placeholder" = "Ex: Sexo";
+
+/* Class = "UITextField"; placeholder = "Ex: Renda"; ObjectID = "leT-nd-fUj"; */
+"leT-nd-fUj.placeholder" = "Ex: Renda";
+
+/* Class = "UINavigationItem"; title = "Treinamento"; ObjectID = "r7h-F5-5ow"; */
+"r7h-F5-5ow.title" = "Treinamento";
+
+/* Class = "UILabel"; text = "Label #2"; ObjectID = "rkl-I8-AoQ"; */
+"rkl-I8-AoQ.text" = "Label #2";
+
+/* Class = "UINavigationItem"; title = "Explicação"; ObjectID = "s0d-oa-acj"; */
+"s0d-oa-acj.title" = "Explicação";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "sEs-cQ-8p7"; */
+"sEs-cQ-8p7.text" = "Label";
+
+/* Class = "UILabel"; text = "Título #3"; ObjectID = "sd4-Ip-Fnn"; */
+"sd4-Ip-Fnn.text" = "Título #3";
+
+/* Class = "UILabel"; text = "Importar"; ObjectID = "tK0-C2-vxy"; */
+"tK0-C2-vxy.text" = "Importar";
+
+/* Class = "UITabBarItem"; title = "Configuração"; ObjectID = "vZ7-QZ-UYh"; */
+"vZ7-QZ-UYh.title" = "Configuração";
+
+/* Class = "UILabel"; text = "Exemplo XOR"; ObjectID = "xTp-C2-9Ul"; */
+"xTp-C2-9Ul.text" = "Exemplo XOR";
