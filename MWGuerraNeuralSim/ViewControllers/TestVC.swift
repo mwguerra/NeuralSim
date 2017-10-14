@@ -225,6 +225,34 @@ class TestVC: UIViewController, UITextFieldDelegate {
                     let tabBarController = self.parent as! UITabBarController
                     tabBarController.selectedIndex = 3 // Quarta Aba (3 em índice 0) : Execução de teste de validação
                     
+                    ////////////////
+                    
+                    // Atualiza a informação da view segmentada
+                    switch self.infoSegControl.selectedSegmentIndex {
+                    case 0:
+                        
+                        // Atualiza a view de Informações: TREINAMENTO
+                        self.infoTextView.text.removeAll()
+                        
+                        if !NeuralNetController.trainedResults.isEmpty {
+                            for iAux in 0...(NeuralNetController.trainedResults.count - 1) {
+                                self.infoTextView.text.append(NeuralNetController.trainedResults[iAux])
+                            }
+                        }
+                        
+                    case 1:
+                        
+                        // Atualiza a view de Informações: CONFIGURAÇÃO
+                        self.infoTextView.text.removeAll()
+                        
+                        self.infoTextView.text.append("Rodadas de treinamanto: \(NeuralNetController.trainEpochs)\n")
+                        self.infoTextView.text.append("Neurônios na camada intermediária: \(NeuralNetController.neuronsHL)\n")
+                        self.infoTextView.text.append("Taxa de aprendizado: \(NeuralNetController.learningRate)\n")
+                        
+                    default:
+                        print("Erro no controle segmentado da infoView")
+                    }
+                    
                 }
             }
             
