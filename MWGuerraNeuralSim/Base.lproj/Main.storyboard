@@ -897,7 +897,7 @@ Redes neurais como esta somente podem dar respostas para padrões que foram trei
         </scene>
     </scenes>
     <resources>
-        <image name="RedeNeural" width="617" height="341"/>
+        <image name="RedeNeural" width="1234" height="682"/>
         <image name="automation" width="30" height="30"/>
         <image name="info" width="30" height="30"/>
         <image name="list" width="30" height="30"/>
