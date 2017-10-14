@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2WM-rW-opf">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2WM-rW-opf">
                                 <rect key="frame" x="16" y="242" width="343" height="376"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
@@ -75,7 +75,7 @@ Redes neurais como esta somente podem dar respostas para padrões que foram trei
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Explicação" id="Bzf-Lq-qdg"/>
+                    <tabBarItem key="tabBarItem" title="Explicação" image="info" selectedImage="info" id="Bzf-Lq-qdg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -114,7 +114,7 @@ Redes neurais como esta somente podem dar respostas para padrões que foram trei
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="klW-j1-im6"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Configuração" id="BqQ-kY-Wyv"/>
+                    <tabBarItem key="tabBarItem" title="Configuração" image="support" selectedImage="support" id="BqQ-kY-Wyv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4dn-YD-j5m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -676,6 +676,9 @@ Redes neurais como esta somente podem dar respostas para padrões que foram trei
                                     <outlet property="delegate" destination="dnt-uY-uyu" id="ZMk-4B-WBS"/>
                                 </connections>
                             </tableView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dkC-oc-kqi">
+                                <rect key="frame" x="0.0" y="64" width="375" height="2"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -683,16 +686,20 @@ Redes neurais como esta somente podem dar respostas para padrões que foram trei
                             <constraint firstItem="SqA-lf-kUw" firstAttribute="leading" secondItem="Ya9-FW-Pml" secondAttribute="leading" id="Ek9-vm-lfa"/>
                             <constraint firstItem="SqA-lf-kUw" firstAttribute="top" secondItem="Fj8-tS-Ysa" secondAttribute="bottom" id="QF1-Sh-Nup"/>
                             <constraint firstItem="SqA-lf-kUw" firstAttribute="leading" secondItem="Ya9-FW-Pml" secondAttribute="leading" id="jSF-bB-Hm0"/>
+                            <constraint firstItem="dkC-oc-kqi" firstAttribute="leading" secondItem="Mdh-DY-LZj" secondAttribute="leading" id="mdW-Eu-zR8"/>
                             <constraint firstItem="SqA-lf-kUw" firstAttribute="trailing" secondItem="Ya9-FW-Pml" secondAttribute="trailing" id="o7s-nL-zm3"/>
+                            <constraint firstAttribute="trailing" secondItem="dkC-oc-kqi" secondAttribute="trailing" id="pbf-Qe-Hsc"/>
                             <constraint firstItem="SqA-lf-kUw" firstAttribute="trailing" secondItem="Ya9-FW-Pml" secondAttribute="trailing" id="tWp-Ru-UqI"/>
                             <constraint firstItem="Fj8-tS-Ysa" firstAttribute="leading" secondItem="Ya9-FW-Pml" secondAttribute="leading" id="waV-gw-jDv"/>
                             <constraint firstItem="SqA-lf-kUw" firstAttribute="bottom" secondItem="Ya9-FW-Pml" secondAttribute="bottom" id="wdc-ba-riE"/>
                             <constraint firstItem="Fj8-tS-Ysa" firstAttribute="top" secondItem="Ya9-FW-Pml" secondAttribute="top" id="wuy-9i-3vv"/>
+                            <constraint firstItem="dkC-oc-kqi" firstAttribute="top" secondItem="Fj8-tS-Ysa" secondAttribute="bottom" id="zX0-So-Nyb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ya9-FW-Pml"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Treinamento" id="Ure-su-VE0"/>
+                    <tabBarItem key="tabBarItem" title="Treinamento" image="list" selectedImage="list" id="Ure-su-VE0"/>
                     <connections>
+                        <outlet property="progressView" destination="dkC-oc-kqi" id="nNz-0T-J3b"/>
                         <outlet property="trainingTableView" destination="SqA-lf-kUw" id="BhF-o8-JNE"/>
                         <outlet property="treinarButton" destination="G7Q-cf-hqE" id="Yta-6a-raM"/>
                     </connections>
@@ -812,7 +819,7 @@ Redes neurais como esta somente podem dar respostas para padrões que foram trei
                                             <action selector="SegmentedControlChanged:" destination="ohw-hj-QXs" eventType="valueChanged" id="FLw-7r-ySG"/>
                                         </connections>
                                     </segmentedControl>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Rede não treinada" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cKy-Gy-PfQ">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Rede não treinada" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cKy-Gy-PfQ">
                                         <rect key="frame" x="8" y="44" width="327" height="258"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -830,6 +837,9 @@ Redes neurais como esta somente podem dar respostas para padrões que foram trei
                                     <constraint firstItem="Oy5-zG-ng7" firstAttribute="top" secondItem="Dpu-Vk-mZE" secondAttribute="top" constant="8" id="uZI-dj-XN6"/>
                                 </constraints>
                             </view>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Wyh-cm-ECr">
+                                <rect key="frame" x="0.0" y="64" width="375" height="2"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -842,7 +852,9 @@ Redes neurais como esta somente podem dar respostas para padrões que foram trei
                             <constraint firstItem="Ynw-EM-gHH" firstAttribute="bottom" secondItem="Dpu-Vk-mZE" secondAttribute="bottom" constant="8" id="Hcj-Jr-PKk"/>
                             <constraint firstItem="Dpu-Vk-mZE" firstAttribute="leading" secondItem="Ynw-EM-gHH" secondAttribute="leading" constant="16" id="JfI-mL-rKj"/>
                             <constraint firstItem="Ynw-EM-gHH" firstAttribute="trailing" secondItem="K8M-Ra-wOL" secondAttribute="trailing" constant="16" id="MVv-rm-l0R"/>
+                            <constraint firstItem="Wyh-cm-ECr" firstAttribute="top" secondItem="rvj-0h-ufn" secondAttribute="bottom" id="RR9-qm-e8h"/>
                             <constraint firstItem="iz3-H2-46Y" firstAttribute="top" secondItem="5Zh-hr-PzD" secondAttribute="bottom" constant="8" id="TLu-Mr-eEi"/>
+                            <constraint firstItem="Wyh-cm-ECr" firstAttribute="leading" secondItem="Inr-yy-wbS" secondAttribute="leading" id="TWD-TW-cj6"/>
                             <constraint firstItem="rkl-I8-AoQ" firstAttribute="leading" secondItem="Ynw-EM-gHH" secondAttribute="leading" constant="16" id="ZxA-9i-8IE"/>
                             <constraint firstItem="Ynw-EM-gHH" firstAttribute="trailing" secondItem="5Zh-hr-PzD" secondAttribute="trailing" constant="16" id="dcd-b5-b9L"/>
                             <constraint firstItem="5Zh-hr-PzD" firstAttribute="leading" secondItem="3kY-90-xRY" secondAttribute="trailing" constant="8" id="enK-Tp-vs8"/>
@@ -850,6 +862,7 @@ Redes neurais como esta somente podem dar respostas para padrões que foram trei
                             <constraint firstItem="5Zh-hr-PzD" firstAttribute="top" secondItem="Ynw-EM-gHH" secondAttribute="top" constant="67" id="gbd-4C-L0F"/>
                             <constraint firstItem="rkl-I8-AoQ" firstAttribute="centerY" secondItem="iz3-H2-46Y" secondAttribute="centerY" id="j3D-Dk-cT0"/>
                             <constraint firstItem="1kK-W6-bHO" firstAttribute="leading" secondItem="Ynw-EM-gHH" secondAttribute="leading" constant="16" id="jJj-9w-ydC"/>
+                            <constraint firstAttribute="trailing" secondItem="Wyh-cm-ECr" secondAttribute="trailing" id="kBW-4I-szp"/>
                             <constraint firstItem="rvj-0h-ufn" firstAttribute="top" secondItem="Ynw-EM-gHH" secondAttribute="top" id="lLH-o2-ykK"/>
                             <constraint firstItem="rvj-0h-ufn" firstAttribute="leading" secondItem="Ynw-EM-gHH" secondAttribute="leading" id="npx-Qc-BTK"/>
                             <constraint firstItem="3kY-90-xRY" firstAttribute="leading" secondItem="Ynw-EM-gHH" secondAttribute="leading" constant="16" id="nsb-vu-lQ5"/>
@@ -861,7 +874,7 @@ Redes neurais como esta somente podem dar respostas para padrões que foram trei
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ynw-EM-gHH"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Testes" id="UeC-wW-I1D"/>
+                    <tabBarItem key="tabBarItem" title="Testes" image="automation" selectedImage="automation" id="UeC-wW-I1D"/>
                     <connections>
                         <outlet property="infoSegControl" destination="Oy5-zG-ng7" id="eMw-ZX-eWd"/>
                         <outlet property="infoTextView" destination="cKy-Gy-PfQ" id="IQr-Bh-Hty"/>
@@ -872,6 +885,7 @@ Redes neurais como esta somente podem dar respostas para padrões que foram trei
                         <outlet property="input2TextField" destination="iz3-H2-46Y" id="Mb7-8z-K8g"/>
                         <outlet property="input3Label" destination="1kK-W6-bHO" id="mia-L0-zj5"/>
                         <outlet property="input3TextField" destination="K8M-Ra-wOL" id="cq9-tV-vdV"/>
+                        <outlet property="progressView" destination="Wyh-cm-ECr" id="t2s-Vp-DMW"/>
                         <outlet property="resultLabel" destination="S1z-6z-RBZ" id="dkU-fU-7er"/>
                         <outlet property="retreinarButton" destination="fmN-jI-hFd" id="8zc-8y-Wpu"/>
                         <outlet property="runButton" destination="RMN-JP-j52" id="lri-6Q-XFy"/>
@@ -883,6 +897,10 @@ Redes neurais como esta somente podem dar respostas para padrões que foram trei
         </scene>
     </scenes>
     <resources>
-        <image name="RedeNeural" width="1234" height="682"/>
+        <image name="RedeNeural" width="617" height="341"/>
+        <image name="automation" width="30" height="30"/>
+        <image name="info" width="30" height="30"/>
+        <image name="list" width="30" height="30"/>
+        <image name="support" width="30" height="30"/>
     </resources>
 </document>

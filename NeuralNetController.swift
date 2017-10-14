@@ -23,8 +23,10 @@ class NeuralNetController: NSObject {
     static var inputData = [[Double]]()
     static var outputData = [[Double]]()
     static var trainedResults = ["Rede não treinada"]
+    static var trainedResultsFCU = ["Rede não treinada"] // Apenas para a dissertação da FCU
     static var network:Network?
-    static var isTrained = false
+    static var isTrained = false    // Verifica se a rede está treinada, para não travar o App ao mandar executar uma rede não treinada.
+    static var isTraining = false   // Verifica se está treinando para controlar a habilitação ou não dos botões. Desabilita os botões se estiver trainando pra não dar problema.
     static var actFunction = "Sigmóide"
     
     // http://www.electronics-tutorials.ws/category/logic
@@ -105,29 +107,29 @@ class NeuralNetController: NSObject {
     static let vendasInputData:[[Double]] = [[0.303545,1,0.69], // [3035,45,Female,69,FALSE]  :: [0.303545,1,0.69,0]
                                              [0.492854,1,0.61], // [4928,54,Female,61,FALSE]  :: [0.492854,1,0.61,0]
                                              [0.87872,0,0.2],   // [8787,2,Male,20,TRUE]      :: [0.87872,0,0.2,1]
-                                             [0.738387,1,0.18], // [7383,87,Female,18,TRUE]   :: [0.738387,1,0.18,1]
+                                             [0.738387,1,0.18], // [7383,87,Female,18,FALSE]  :: [0.738387,1,0.18,0]
                                              [0.685496,0,0.31], // [6854,96,Male,31,TRUE]     :: [0.685496,0,0.31,1]
                                              [0.192347,0,0.31], // [1923,47,Male,31,TRUE]     :: [0.192347,0,0.31,1]
-                                             [0.67486,1,0.22],  // [6748,6,Female,22,FALSE]   :: [0.67486,1,0.22,0]
+                                             [0.67486,1,0.22],  // [6748,6,Female,22,TRUE]    :: [0.67486,1,0.22,1]
                                              [0.312014,1,0.68], // [3120,14,Female,68,FALSE]  :: [0.312014,1,0.68,0]
-                                             [0.572383,1,0.46], // [5723,83,Female,46,TRUE]   :: [0.572383,1,0.46,1]
+                                             [0.572383,1,0.46], // [5723,83,Female,46,FALSE]  :: [0.572383,1,0.46,0]
                                              [0.954982,0,0.32], // [9549,82,Male,32,TRUE]     :: [0.954982,0,0.32,1]
-                                             [0.364274,0,0.69], // [3642,74,Male,69,FALSE]    :: [0.364274,0,0.69,0]
-                                             [0.685901,1,0.69], // [6859,01,Female,69,TRUE]   :: [0.685901,1,0.69,1]
+                                             [0.364274,0,0.69], // [3642,74,Male,69,TRUE]     :: [0.364274,0,0.69,1]
+                                             [0.685901,1,0.69], // [6859,01,Female,69,FALSE]  :: [0.685901,1,0.69,0]
                                              [0.534114,0,0.35], // [5341,14,Male,35,TRUE]     :: [0.534114,0,0.35,1]
-                                             [0.690853,1,0.46], // [6908,53,Female,46,TRUE]   :: [0.690853,1,0.46,1]
+                                             [0.690853,1,0.46], // [6908,53,Female,46,FALSE]  :: [0.690853,1,0.46,0]
                                              [0.697742,1,0.49], // [6977,42,Female,49,FALSE]  :: [0.697742,1,0.49,0]
                                              [1.074086,1,0.29], // [10740,86,Female,29,FALSE] :: [1.074086,1,0.29,0]
-                                             [0.263181,1,0.22], // [2631,81,Female,22,TRUE]   :: [0.263181,1,0.22,1]
-                                             [0.265828,0,0.36], // [2658,28,Male,36,FALSE]    :: [0.265828,0,0.36,0]
+                                             [0.263181,1,0.22], // [2631,81,Female,22,FALSE]  :: [0.263181,1,0.22,0]
+                                             [0.265828,0,0.36], // [2658,28,Male,36,TRUE]     :: [0.265828,0,0.36,1]
                                              [0.230441,1,0.35], // [2304,41,Female,35,FALSE]  :: [0.230441,1,0.35,0]
-                                             [0.317267,0,0.19], // [3172,67,Male,19,FALSE]    :: [0.317267,0,0.19,0]
+                                             [0.317267,0,0.19], // [3172,67,Male,19,TRUE]     :: [0.317267,0,0.19,1]
                                              [0.679807,1,0.49], // [6798,07,Female,49,FALSE]  :: [0.679807,1,0.49,0]
                                              [0.698265,1,0.58], // [6982,65,Female,58,FALSE]  :: [0.698265,1,0.58,0]
                                              [1.088765,1,0.42], // [10887,65,Female,42,FALSE] :: [1.088765,1,0.42,0]
                                              [0.766463,1,0.53], // [7664,63,Female,53,FALSE]  :: [0.766463,1,0.53,0]
-                                             [0.406304,1,0.49], // [4063,04,Female,49,TRUE]   :: [0.406304,1,0.49,1]
-                                             [0.896704,0,0.18], // [8967,04,Male,18,FALSE]    :: [0.896704,0,0.18,0]
+                                             [0.406304,1,0.49], // [4063,04,Female,49,FALSE]  :: [0.406304,1,0.49,0]
+                                             [0.896704,0,0.18], // [8967,04,Male,18,TRUE]     :: [0.896704,0,0.18,1]
                                              [1.048532,1,0.3],  // [10485,32,Female,30,FALSE] :: [1.048532,1,0.3,0]
                                              [0.848672,0,0.24], // [8486,72,Male,24,TRUE]     :: [0.848672,0,0.24,1]
                                              [0.800097,0,0.44], // [8000,97,Male,44,FALSE]    :: [0.800097,0,0.44,0]
@@ -144,29 +146,29 @@ class NeuralNetController: NSObject {
     static let vendasOutputData:[[Double]] = [[0], // [3035,45,Female,69,FALSE]  :: [0.303545,1,0.69,0]
                                               [0], // [4928,54,Female,61,FALSE]  :: [0.492854,1,0.61,0]
                                               [1], // [8787,2,Male,20,TRUE]      :: [0.87872,0,0.2,1]
-                                              [1], // [7383,87,Female,18,TRUE]   :: [0.738387,1,0.18,1]
+                                              [0], // [7383,87,Female,18,FALSE]  :: [0.738387,1,0.18,0]
                                               [1], // [6854,96,Male,31,TRUE]     :: [0.685496,0,0.31,1]
                                               [1], // [1923,47,Male,31,TRUE]     :: [0.192347,0,0.31,1]
-                                              [0], // [6748,6,Female,22,FALSE]   :: [0.67486,1,0.22,0]
+                                              [1], // [6748,6,Female,22,TRUE]    :: [0.67486,1,0.22,1]
                                               [0], // [3120,14,Female,68,FALSE]  :: [0.312014,1,0.68,0]
-                                              [1], // [5723,83,Female,46,TRUE]   :: [0.572383,1,0.46,1]
+                                              [0], // [5723,83,Female,46,FALSE]  :: [0.572383,1,0.46,0]
                                               [1], // [9549,82,Male,32,TRUE]     :: [0.954982,0,0.32,1]
-                                              [0], // [3642,74,Male,69,FALSE]    :: [0.364274,0,0.69,0]
-                                              [1], // [6859,01,Female,69,TRUE]   :: [0.685901,1,0.69,1]
+                                              [1], // [3642,74,Male,69,TRUE]     :: [0.364274,0,0.69,1]
+                                              [0], // [6859,01,Female,69,FALSE]  :: [0.685901,1,0.69,0]
                                               [1], // [5341,14,Male,35,TRUE]     :: [0.534114,0,0.35,1]
-                                              [1], // [6908,53,Female,46,TRUE]   :: [0.690853,1,0.46,1]
+                                              [0], // [6908,53,Female,46,FALSE]  :: [0.690853,1,0.46,0]
                                               [0], // [6977,42,Female,49,FALSE]  :: [0.697742,1,0.49,0]
                                               [0], // [10740,86,Female,29,FALSE] :: [1.074086,1,0.29,0]
-                                              [1], // [2631,81,Female,22,TRUE]   :: [0.263181,1,0.22,1]
-                                              [0], // [2658,28,Male,36,FALSE]    :: [0.265828,0,0.36,0]
+                                              [0], // [2631,81,Female,22,FALSE]  :: [0.263181,1,0.22,0]
+                                              [1], // [2658,28,Male,36,TRUE]     :: [0.265828,0,0.36,1]
                                               [0], // [2304,41,Female,35,FALSE]  :: [0.230441,1,0.35,0]
-                                              [0], // [3172,67,Male,19,FALSE]    :: [0.317267,0,0.19,0]
+                                              [1], // [3172,67,Male,19,TRUE]     :: [0.317267,0,0.19,1]
                                               [0], // [6798,07,Female,49,FALSE]  :: [0.679807,1,0.49,0]
                                               [0], // [6982,65,Female,58,FALSE]  :: [0.698265,1,0.58,0]
                                               [0], // [10887,65,Female,42,FALSE] :: [1.088765,1,0.42,0]
                                               [0], // [7664,63,Female,53,FALSE]  :: [0.766463,1,0.53,0]
-                                              [1], // [4063,04,Female,49,TRUE]   :: [0.406304,1,0.49,1]
-                                              [0], // [8967,04,Male,18,FALSE]    :: [0.896704,0,0.18,0]
+                                              [0], // [4063,04,Female,49,FALSE]  :: [0.406304,1,0.49,0]
+                                              [1], // [8967,04,Male,18,TRUE]     :: [0.896704,0,0.18,1]
                                               [0], // [10485,32,Female,30,FALSE] :: [1.048532,1,0.3,0]
                                               [1], // [8486,72,Male,24,TRUE]     :: [0.848672,0,0.24,1]
                                               [0], // [8000,97,Male,44,FALSE]    :: [0.800097,0,0.44,0]
@@ -285,31 +287,73 @@ class NeuralNetController: NSObject {
         for _ in 0..<NeuralNetController.trainEpochs {
             NeuralNetController.network!.train(inputs: NeuralNetController.inputData, expecteds: NeuralNetController.outputData)
         }
-
+        
         /*
-        print ("\n\n=============================")
-        print ("\nWeights of hidden layer")
-        for neuron in NeuralNetController.network!.layers[1].neurons {
-            print("\(neuron.weights)")
-        }
+         print ("\n\n=============================")
+         print ("\nWeights of hidden layer")
+         for neuron in NeuralNetController.network!.layers[1].neurons {
+         print("\(neuron.weights)")
+         }
+         
+         print ("\n\n=============================")
+         print ("\nWeights of output layer")
+         for neuron in NeuralNetController.network!.layers[2].neurons {
+         print("\(neuron.weights)\n")
+         }
+         */
         
         print ("\n\n=============================")
-        print ("\nWeights of output layer")
-        for neuron in NeuralNetController.network!.layers[2].neurons {
-            print("\(neuron.weights)\n")
-        }
-        */
         
-        print ("\n\n=============================")
+        NeuralNetController.trainedResults.removeAll()
+        NeuralNetController.trainedResultsFCU.removeAll()   // Apenas para a dissertação da FCU. Sem utilidade para o App.
 
+        for i in 0..<NeuralNetController.inputData.count {
+            let results = NeuralNetController.network!.validate(input: NeuralNetController.inputData[i], expected: NeuralNetController.outputData[i][0])
+            
+            let trainedResult = "Entrada:\(NeuralNetController.inputData[i])\nSaída:\(results.result)\nEsperado:\(results.expected)\n\n"
+            let trainedResultFCU = "\(results.result)\n"
+            // print(trainedResult)
+            
+            // Salva o texto para mostrar na view de informações
+            NeuralNetController.trainedResults.append(trainedResult)
+            NeuralNetController.trainedResultsFCU.append(trainedResultFCU)    // Apenas para a dissertação da FCU. Sem utilidade para o App.
+        }
+    }
+    
+    // Subdivisão de trainNetwork para mostrar a evolução em progressViews.
+    // 1. trainNetworkPrepare
+    // 2. trainNetworkSteps
+    // 3. trainNetworkFinish
+    // trainNetwork continua fazendo o trabalho completo se não quiser usar o trainNetworkStep
+    class func trainNetworkPrepare() {
+        NeuralNetController.network = Network(layerStructure: [3,NeuralNetController.neuronsHL,1], activationFunction: NeuralNetController.sigmoidFunction, derivativeActivationFunction: NeuralNetController.derivativeSigmoidFunction, learningRate: NeuralNetController.learningRate)
+    }
+    
+    // Subdivisão de trainNetwork para mostrar a evolução em progressViews.
+    // 1. trainNetworkPrepare
+    // 2. trainNetworkSteps
+    // 3. trainNetworkFinish
+    // trainNetwork continua fazendo o trabalho completo se não quiser usar o trainNetworkSteps
+    // trainNetworkSteps deve ser executado dentro de um loop de Epochs:
+    // for _ in 0..<NeuralNetController.trainEpochs { NeuralNetController.trainNetworkSteps() }
+    class func trainNetworkSteps() {
+        NeuralNetController.network!.train(inputs: NeuralNetController.inputData, expecteds: NeuralNetController.outputData)
+    }
+    
+    // Subdivisão de trainNetwork para mostrar a evolução em progressViews.
+    // 1. trainNetworkPrepare
+    // 2. trainNetworkSteps
+    // 3. trainNetworkFinish
+    // trainNetwork continua fazendo o trabalho completo se não quiser usar o trainNetworkStep
+    class func trainNetworkFinish() {
         NeuralNetController.trainedResults.removeAll()
         
         for i in 0..<NeuralNetController.inputData.count {
             let results = NeuralNetController.network!.validate(input: NeuralNetController.inputData[i], expected: NeuralNetController.outputData[i][0])
             
             let trainedResult = "Entrada:\(NeuralNetController.inputData[i])\nSaída:\(results.result)\nPredição:\(results.expected)\n\n"
-            print(trainedResult)
-        
+            // print(trainedResult)
+            
             // Salva o texto para mostrar na view de informações
             NeuralNetController.trainedResults.append(trainedResult)
         }
@@ -350,7 +394,7 @@ extension Neuron {
         ////////////////////////
         // GUERRA
         
-        print(". Neurônio: \(inputs)")
+        // print(". Neurônio: \(inputs)")
         
         // Sigmóide: converte de 0 a 1 (saída padrão da função sigmóide) para os sinais aceitos na entrada (-2 a +2)
         let normalizedInputs = inputs.map { ($0 * 4) - 2.0 }
@@ -397,12 +441,14 @@ class Layer {
         ////////////////////////
         // GUERRA
         
+        /*
         print()
         if previousLayer == nil { //Input layer
             print(":: Layer INICIAL")
         } else { //Hidden and output layers
             print(":: Layer Hidden ou Saída")
         }
+         */
         
         // GUERRA
         ////////////////////////

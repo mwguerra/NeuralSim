@@ -22,6 +22,7 @@ class TestVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var infoSegControl: UISegmentedControl!
     @IBOutlet weak var infoTextView: UITextView!
+    @IBOutlet weak var progressView: UIProgressView!
     
     var aIndicator = UIActivityIndicatorView()
     
@@ -30,15 +31,30 @@ class TestVC: UIViewController, UITextFieldDelegate {
 
         // Do any additional setup after loading the view.
         
+        // Activity Indicator
         aIndicator.center = self.view.center
         aIndicator.activityIndicatorViewStyle = .gray
         self.view.addSubview(aIndicator)
         
+        // ProgressView
+        if !NeuralNetController.isTraining {
+            progressView.isHidden = true
+        } else {
+            progressView.isHidden = false
+        }
+
         // Textfield delagate feito através do storyboard
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        // ProgressView
+        if !NeuralNetController.isTraining {
+            progressView.isHidden = true
+        } else {
+            progressView.isHidden = false
+        }
         
         // Atualiza os Labels das variáveis de entrada
         input1Label.text = NeuralNetController.inputLabels[0]
@@ -97,6 +113,10 @@ class TestVC: UIViewController, UITextFieldDelegate {
 
     @IBAction func runAction(_ sender: Any) {
         
+        ExecutaTestesParaFCU()
+    
+    /**********************
+         
         if NeuralNetController.isTrained {
             
             // Ajusta pontos e vírgulas para pontos (para proteção da internacionalização para cálculo nas variáveis do código)
@@ -154,10 +174,15 @@ class TestVC: UIViewController, UITextFieldDelegate {
             self.present(alert, animated: true, completion: nil)
         
         }
+ 
+     **********************/
         
     }
     
     @IBAction func retreinarAction(_ sender: Any) {
+        
+        var progressStep:Float = 0.0
+        progressView.setProgress(progressStep, animated: false)
         
         // Verifica se há dados para treinamento na tabela (ao menos 2 linhas)
         if NeuralNetController.inputData.count > 1 {
@@ -166,16 +191,44 @@ class TestVC: UIViewController, UITextFieldDelegate {
             runButton.isEnabled = false
             aIndicator.startAnimating()
             NeuralNetController.isTrained = true    // pode executar testes a partir deste momento
+            NeuralNetController.isTraining = true
             
             // Threading: https://www.youtube.com/watch?v=sOnvsZwNsp0
             DispatchQueue.global(qos: .userInitiated).async {
-                NeuralNetController.trainNetwork()
                 
                 DispatchQueue.main.async{
+                    self.progressView.isHidden = false
+                }
+                
+                // EXECUTA O TREINAMENTO DA REDE
+                NeuralNetController.trainNetworkPrepare()
+                for iAux in 0..<NeuralNetController.trainEpochs {
+                    progressStep = Float(iAux) / Float(NeuralNetController.trainEpochs)
+                    NeuralNetController.trainNetworkSteps()
+                    
+                    DispatchQueue.main.async{
+                        // Atualiza progressView
+                        self.progressView.setProgress(progressStep, animated: true)
+                        print("iAux: \(iAux) :: Epochs: \(NeuralNetController.trainEpochs) :: PROGRESS STEP: \(progressStep)")
+                    }
+                }
+                NeuralNetController.trainNetworkFinish()
+                
+                DispatchQueue.main.async{
+                    self.progressView.isHidden = true
+                    
+                    // Reabilita os botões
+                    NeuralNetController.isTraining = false
+                    
                     // códigos que mexem com a UI, como reloaddata de tableviews
                     self.aIndicator.stopAnimating()
                     self.retreinarButton.isEnabled = true
                     self.runButton.isEnabled = true
+                    
+                    // Após treinar, leva para a aba de execução
+                    let tabBarController = self.parent as! UITabBarController
+                    tabBarController.selectedIndex = 3 // Quarta Aba (3 em índice 0) : Execução de teste de validação
+                    
                 }
             }
             
@@ -188,8 +241,9 @@ class TestVC: UIViewController, UITextFieldDelegate {
                 NSLog("The \"OK\" alert occured.")
             }))
             self.present(alert, animated: true, completion: nil)
-        
+
         }
+
     }
     
     @IBAction func SegmentedControlChanged(_ sender: UISegmentedControl) {
@@ -220,5 +274,86 @@ class TestVC: UIViewController, UITextFieldDelegate {
         }
 
     }
+    
+    /////////////////////////////////////////////////
+    // MWGuerra: Rotina para a dissertação da FCU
+    /////////////////////////////////////////////////
+    func ExecutaTestesParaFCU () -> String {
+        
+        var stringParaTextView = ""
+    
+        // Epoch: 200, 500, 1000
+        // NeuroniosHL: 2, 5, 10
+        // LearningRate: 20%, 40%, 80%
+        
+        infoTextView.text.removeAll()
+        
+        for iAux1 in 0...2 {
+            
+            switch iAux1 {
+            case 0:
+                NeuralNetController.trainEpochs = 200
+            case 1:
+                NeuralNetController.trainEpochs = 500
+            case 2:
+                NeuralNetController.trainEpochs = 1000
+            default:
+                print("Erro FCU: Epoch")
+            }
+            
+            for iAux2 in 0...2 {
+                
+                switch iAux2 {
+                case 0:
+                    NeuralNetController.neuronsHL = 2
+                case 1:
+                    NeuralNetController.neuronsHL = 5
+                case 2:
+                    NeuralNetController.neuronsHL = 10
+                default:
+                    print("Erro FCU: NeuronioHL")
+                }
+
+                for iAux3 in 0...2 {
+                    
+                    switch iAux3 {
+                    case 0:
+                        NeuralNetController.learningRate = 0.2
+                    case 1:
+                        NeuralNetController.learningRate = 0.4
+                    case 2:
+                        NeuralNetController.learningRate = 0.8
+                    default:
+                        print("Erro FCU: LearningRate")
+                    }
+                    
+                    // EXECUTA O TESTE
+                    NeuralNetController.trainNetwork()
+                    
+                    // Atualiza a view de Informações: TREINAMENTO
+                    infoTextView.text.append("#######################\n")
+                    infoTextView.text.append("#### Epoch: \(NeuralNetController.trainEpochs)\n")
+                    infoTextView.text.append("#### NeuroniosHL: \(NeuralNetController.neuronsHL)\n")
+                    infoTextView.text.append("#### LearningRate: \(NeuralNetController.learningRate)\n\n")
+                    
+                    if !NeuralNetController.trainedResults.isEmpty {
+                        for iAux in 0...(NeuralNetController.trainedResultsFCU.count - 1) {
+                            infoTextView.text.append(NeuralNetController.trainedResultsFCU[iAux])
+                        }
+                    }
+                    
+                    print("#######################")
+                    print("#### Epoch: \(NeuralNetController.trainEpochs)")
+                    print("#### NeuroniosHL: \(NeuralNetController.neuronsHL)")
+                    print("#### LearningRate: \(NeuralNetController.learningRate)")
+                    
+                }
+            }
+        }
+        
+        return stringParaTextView
+    
+    }
+    
     
 }

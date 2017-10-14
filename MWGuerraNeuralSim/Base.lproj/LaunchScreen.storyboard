@@ -29,10 +29,10 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
-                                    <tabBarItem title="Explicação" id="J0O-T7-W9I"/>
-                                    <tabBarItem title="Configuração" id="BZ6-aK-Oz0"/>
-                                    <tabBarItem title="Treinamento" id="ii1-hd-vCY"/>
-                                    <tabBarItem title="Testes" id="iOx-wS-NQc"/>
+                                    <tabBarItem title="Explicação" image="info" selectedImage="info" id="J0O-T7-W9I"/>
+                                    <tabBarItem title="Configuração" image="support" selectedImage="support" id="BZ6-aK-Oz0"/>
+                                    <tabBarItem title="Treinamento" image="list" selectedImage="list" id="ii1-hd-vCY"/>
+                                    <tabBarItem title="Testes" image="automation" selectedImage="automation" id="iOx-wS-NQc"/>
                                 </items>
                             </tabBar>
                         </subviews>
@@ -45,4 +45,10 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="automation" width="30" height="30"/>
+        <image name="info" width="30" height="30"/>
+        <image name="list" width="30" height="30"/>
+        <image name="support" width="30" height="30"/>
+    </resources>
 </document>

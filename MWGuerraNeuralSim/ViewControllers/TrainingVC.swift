@@ -15,6 +15,7 @@ class TrainingVC: UIViewController {
     
     @IBOutlet weak var trainingTableView: UITableView!
     @IBOutlet weak var treinarButton: UIBarButtonItem!
+    @IBOutlet weak var progressView: UIProgressView!
     
     var aIndicator = UIActivityIndicatorView()
     var trainingData: [Float]?
@@ -29,10 +30,19 @@ class TrainingVC: UIViewController {
 
         // Do any additional setup after loading the view.
  
+        // Activity Indicator
+        // Ver: https://coderwall.com/p/su1t1a/ios-customized-activity-indicator-with-swift
         aIndicator.center = self.view.center
         aIndicator.activityIndicatorViewStyle = .gray
         self.view.addSubview(aIndicator)
-
+        
+        // ProgressView
+        if !NeuralNetController.isTraining {
+            progressView.isHidden = true
+        } else {
+            progressView.isHidden = false
+        }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -40,6 +50,14 @@ class TrainingVC: UIViewController {
         
         // Recarrega a tabela com o conteúdo da Classe de treinamento.
         trainingTableView.reloadData()
+ 
+        // ProgressView
+        if !NeuralNetController.isTraining {
+            progressView.isHidden = true
+        } else {
+            progressView.isHidden = false
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,18 +67,44 @@ class TrainingVC: UIViewController {
     
     @IBAction func treinarAction(_ sender: Any) {
         
+        var progressStep:Float = 0.0
+        progressView.setProgress(progressStep, animated: false)
+        
         // Verifica se há dados para treinamento na tabela (ao menos 2 linhas)
         if NeuralNetController.inputData.count > 1 {
         
             treinarButton.isEnabled = false
             aIndicator.startAnimating()
             NeuralNetController.isTrained = true    // pode executar testes a partir deste momento
-
+            NeuralNetController.isTraining = true
+            
             // Threading: https://www.youtube.com/watch?v=sOnvsZwNsp0
             DispatchQueue.global(qos: .userInitiated).async {
-                NeuralNetController.trainNetwork()
+                
+                DispatchQueue.main.async{
+                    self.progressView.isHidden = false
+                }
+                
+                // EXECUTA O TREINAMENTO DA REDE
+                NeuralNetController.trainNetworkPrepare()
+                for iAux in 0..<NeuralNetController.trainEpochs {
+                    progressStep = Float(iAux) / Float(NeuralNetController.trainEpochs)
+                    NeuralNetController.trainNetworkSteps()
+                    
+                    DispatchQueue.main.async{
+                        // Atualiza progressView
+                        self.progressView.setProgress(progressStep, animated: true)
+                        print("iAux: \(iAux) :: Epochs: \(NeuralNetController.trainEpochs) :: PROGRESS STEP: \(progressStep)")
+                    }
+                }
+                NeuralNetController.trainNetworkFinish()
                 
                 DispatchQueue.main.async{ 
+                    self.progressView.isHidden = true
+                    
+                    // Reabilita os botões
+                    NeuralNetController.isTraining = false
+
                     // códigos que mexem com a UI, como reloaddata de tableviews
                     self.aIndicator.stopAnimating()
                     self.treinarButton.isEnabled = true
@@ -68,10 +112,10 @@ class TrainingVC: UIViewController {
                     // Após treinar, leva para a aba de execução
                     let tabBarController = self.parent as! UITabBarController
                     tabBarController.selectedIndex = 3 // Quarta Aba (3 em índice 0) : Execução de teste de validação
-                    
+            
                 }
             }
-
+            
         } else {
 
             // Mensagem: Não há dados suficientes cadastrados para treinamento
@@ -161,6 +205,7 @@ class TrainingVC: UIViewController {
             isBlank = true
         }
 
+        /*
         // Log de controle
         print("\n\n===========================")
         print("\nAlgum está vazio: \(isBlank)")
@@ -174,6 +219,7 @@ class TrainingVC: UIViewController {
         print("\nArray de Inputs : \(inputData)")
         print("\nArray de Outputs: \(outputData)")
         print("\n===========================\n")
+         */
         
         if isNumber {
         
