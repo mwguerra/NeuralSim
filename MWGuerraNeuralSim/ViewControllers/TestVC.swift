@@ -113,10 +113,8 @@ class TestVC: UIViewController, UITextFieldDelegate {
 
     @IBAction func runAction(_ sender: Any) {
         
-        ExecutaTestesParaFCU()
-    
-    /**********************
-         
+        // ExecutaTestesParaFCU()   // Só foi executado para gerar o apêndice para fazer as análises para a dissertação Neurônio Digital da FCU
+        
         if NeuralNetController.isTrained {
             
             // Ajusta pontos e vírgulas para pontos (para proteção da internacionalização para cálculo nas variáveis do código)
@@ -174,8 +172,6 @@ class TestVC: UIViewController, UITextFieldDelegate {
             self.present(alert, animated: true, completion: nil)
         
         }
- 
-     **********************/
         
     }
     
