@@ -149,7 +149,7 @@ class TestVC: UIViewController, UITextFieldDelegate {
             // Se estiver tudo Ok com as entradas, pode processar e rodar na rede neural
             if isNumber && !isBlank {
                 returnValue = NeuralNetController.runNeuralNet(inputData: inputData)
-                resultLabel.text = "Valor de resposta: \(returnValue * 100)"
+                resultLabel.text = "Valor de resposta: \(returnValue)"
             } else {
                 // Mensagem de dados de entrada inválidos
                 
