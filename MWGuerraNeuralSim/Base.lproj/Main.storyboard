@@ -12,7 +12,7 @@
         <!--Instruções-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Instruções" id="BYZ-38-t0r" customClass="HelpVC" customModule="MWGuerraNeuralSim" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Instruções" id="BYZ-38-t0r" customClass="HelpVC" customModule="NeuralSim" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,21 +22,184 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">Este aplicativo implementa uma rede neural apenas para fins didáticos.  A rede neural implementada é do tipo feedforward, com aprendizagem supervisionada utilizando backpropagation.
+                                        <string key="content">Objetivo
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="22" name=".SFNSText"/>
+                                            <font key="NSOriginalFont" size="22" name=".SFNSText"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+Este aplicativo implementa uma rede neural real e simples, apenas para fins didáticos. 
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">Como usar
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="22" name=".SFNSDisplay"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">1. Configurar a rede neural
+2. Inserir dados para treinamento
+3. Treinar a rede neural
+4. Testar a rede treinada</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name=".SFNSText"/>
+                                            <font key="NSOriginalFont" size="14" name=".SFNSText"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cgo
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">Características
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="22" name=".SFNSText"/>
+                                            <font key="NSOriginalFont" size="22" name=".SFNSText"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <mutableString key="content"> A rede neural implementada é do tipo feedforward, com aprendizagem supervisionada utilizando backpropagation.
 
 São disponibilizadas 3 entradas, 1 saída e uma camada intermediária (hidden layer) com número variável de neurônios. Todas as configurações podem ser feitas a partir da tela de configuração.
 
 Redes neurais não entendem variáveis abstratas, como nomes ou se está quente ou frio. Elas precisam receber valores numéricos que consigam interpretar. Os valores mínimos e máximos de entrada e saída de cada neurônio depende, principalmente, da função de ativação escolhida para cada neurônio. Por este motivo é importante entender o comportamento e limites de cada função e suas derivadas.
 
+</mutableString>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">Normalização de variáveis
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="22" name=".SFNSText"/>
+                                            <font key="NSOriginalFont" size="22" name=".SFNSText"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <mutableString key="content">
 Para facilitar os testes, foi implementada internamente à aplicação uma normalização, variando para cada função de ativação, que transporta as variáveis de entrada de 0 (zero) a 1 (um), para a faixa de operação da função. Isto significa que todas as variáveis inseridas nesta aplicação devem ser normalizadas considerando o valor mínimo de 0 (zero) e máximo de 1 (um).
 
 Exemplos de normalização de variáveis:
-- Idade: de 0 a 100 anos
-- Idade normalizada: idade / 100 = 0 a 1
 
-- Salário: considerados até 12 mil
-- Salário normalizado: salário / 12000 = 0,5 para 6000 e 1 para 12000
-
+• Sexo: Feminino (1) e Masculino (0)
+</mutableString>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">• Idade (de 0 a 100): idade / 100 = 0 a 1
+• Salário (considerado até 12 mil): salário / 12000 = 0,5 para 6000 e 1 para 12000
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops>
+                                                    <textTab alignment="left" location="28">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="56">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="84">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="112">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="140">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="168">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="196">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="224">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="252">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="280">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="308">
+                                                        <options/>
+                                                    </textTab>
+                                                    <textTab alignment="left" location="336">
+                                                        <options/>
+                                                    </textTab>
+                                                </tabStops>
+                                            </paragraphStyle>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Resultados">
+                                        <attributes>
+                                            <font key="NSFont" size="22" name=".SFNSText"/>
+                                            <font key="NSOriginalFont" size="22" name=".SFNSText"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <shadow key="NSShadow" blurRadius="10">
+                                                <size key="offset" width="1.3777276490407724e-16" height="2.25"/>
+                                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="0.33333333333333331" colorSpace="calibratedRGB"/>
+                                            </shadow>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="22" name=".AppleSystemUIFont"/>
+                                            <font key="NSOriginalFont" size="22" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
 Redes neurais como esta somente podem dar respostas para padrões que foram treinadas para processar. Portanto, a escolha das variáveis de teste também são críticas para o resultado final.
 </string>
                                         <attributes>
@@ -50,7 +213,13 @@ Redes neurais como esta somente podem dar respostas para padrões que foram trei
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZe-71-1tc">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
-                                    <navigationItem title="Explicação" id="s0d-oa-acj"/>
+                                    <navigationItem title="Explicação" id="s0d-oa-acj">
+                                        <barButtonItem key="rightBarButtonItem" title="Iniciar" id="beQ-Ex-2cA">
+                                            <connections>
+                                                <action selector="IniciarAction:" destination="BYZ-38-t0r" id="cdD-dT-cLL"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RedeNeural" translatesAutoresizingMaskIntoConstraints="NO" id="tH4-nL-mXQ">
@@ -123,7 +292,7 @@ Redes neurais como esta somente podem dar respostas para padrões que foram trei
         <!--Configuração-->
         <scene sceneID="A4V-Qb-gNw">
             <objects>
-                <tableViewController id="Gpb-42-NNQ" customClass="ConfigTableVC" customModule="MWGuerraNeuralSim" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Gpb-42-NNQ" customClass="ConfigTableVC" customModule="NeuralSim" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="aEy-HN-DbD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -590,7 +759,7 @@ Redes neurais como esta somente podem dar respostas para padrões que foram trei
         <!--Treinamento-->
         <scene sceneID="P3Y-s6-qWl">
             <objects>
-                <viewController id="dnt-uY-uyu" customClass="TrainingVC" customModule="MWGuerraNeuralSim" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dnt-uY-uyu" customClass="TrainingVC" customModule="NeuralSim" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mdh-DY-LZj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -616,7 +785,7 @@ Redes neurais como esta somente podem dar respostas para padrões que foram trei
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="trainingCell" id="9Jl-SK-VsU" customClass="TrainingTVCell" customModule="MWGuerraNeuralSim" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="trainingCell" id="9Jl-SK-VsU" customClass="TrainingTVCell" customModule="NeuralSim" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Jl-SK-VsU" id="XPJ-AS-NFb">
@@ -711,7 +880,7 @@ Redes neurais como esta somente podem dar respostas para padrões que foram trei
         <!--Testes-->
         <scene sceneID="h48-xr-xHH">
             <objects>
-                <viewController id="ohw-hj-QXs" customClass="TestVC" customModule="MWGuerraNeuralSim" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ohw-hj-QXs" customClass="TestVC" customModule="NeuralSim" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Inr-yy-wbS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

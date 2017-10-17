@@ -22,5 +22,11 @@ class HelpVC: UIViewController {
 
     // https://academy.realm.io/posts/tryswift-katsumi-kishikawa-mastering-textkit-swift-ios/
     
+    @IBAction func IniciarAction(_ sender: Any) {
+        // Leva para a aba de configuração
+        let tabBarController = self.parent as! UITabBarController
+        tabBarController.selectedIndex = 1 // Segunda Aba (1 em índice 0) : Configuração da Rede Neural
+    }
+    
 }
 
