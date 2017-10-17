@@ -40,17 +40,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0D0EEDDA1F88436900F6D729 /* MWGuerraNeuralSim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MWGuerraNeuralSim.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D0EEDDA1F88436900F6D729 /* NeuralSim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeuralSim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D0EEDDD1F88436900F6D729 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D0EEDDF1F88436900F6D729 /* HelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
 		0D0EEDE21F88436900F6D729 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0D0EEDE41F88436900F6D729 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D0EEDE71F88436900F6D729 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D0EEDE91F88436900F6D729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0D0EEDEE1F88436900F6D729 /* MWGuerraNeuralSimTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MWGuerraNeuralSimTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D0EEDEE1F88436900F6D729 /* NeuralSimTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeuralSimTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D0EEDF21F88436900F6D729 /* MWGuerraNeuralSimTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWGuerraNeuralSimTests.swift; sourceTree = "<group>"; };
 		0D0EEDF41F88436900F6D729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0D0EEDF91F88436900F6D729 /* MWGuerraNeuralSimUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MWGuerraNeuralSimUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D0EEDF91F88436900F6D729 /* NeuralSimUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeuralSimUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D0EEDFD1F88436900F6D729 /* MWGuerraNeuralSimUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWGuerraNeuralSimUITests.swift; sourceTree = "<group>"; };
 		0D0EEDFF1F88436900F6D729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D0EEE0D1F887F9F00F6D729 /* TrainingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingVC.swift; sourceTree = "<group>"; };
@@ -105,9 +105,9 @@
 		0D0EEDDB1F88436900F6D729 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0D0EEDDA1F88436900F6D729 /* MWGuerraNeuralSim.app */,
-				0D0EEDEE1F88436900F6D729 /* MWGuerraNeuralSimTests.xctest */,
-				0D0EEDF91F88436900F6D729 /* MWGuerraNeuralSimUITests.xctest */,
+				0D0EEDDA1F88436900F6D729 /* NeuralSim.app */,
+				0D0EEDEE1F88436900F6D729 /* NeuralSimTests.xctest */,
+				0D0EEDF91F88436900F6D729 /* NeuralSimUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -159,9 +159,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0D0EEDD91F88436900F6D729 /* MWGuerraNeuralSim */ = {
+		0D0EEDD91F88436900F6D729 /* NeuralSim */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0D0EEE021F88436900F6D729 /* Build configuration list for PBXNativeTarget "MWGuerraNeuralSim" */;
+			buildConfigurationList = 0D0EEE021F88436900F6D729 /* Build configuration list for PBXNativeTarget "NeuralSim" */;
 			buildPhases = (
 				0D0EEDD61F88436900F6D729 /* Sources */,
 				0D0EEDD71F88436900F6D729 /* Frameworks */,
@@ -171,14 +171,14 @@
 			);
 			dependencies = (
 			);
-			name = MWGuerraNeuralSim;
+			name = NeuralSim;
 			productName = MWGuerraNeuralSim;
-			productReference = 0D0EEDDA1F88436900F6D729 /* MWGuerraNeuralSim.app */;
+			productReference = 0D0EEDDA1F88436900F6D729 /* NeuralSim.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0D0EEDED1F88436900F6D729 /* MWGuerraNeuralSimTests */ = {
+		0D0EEDED1F88436900F6D729 /* NeuralSimTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0D0EEE051F88436900F6D729 /* Build configuration list for PBXNativeTarget "MWGuerraNeuralSimTests" */;
+			buildConfigurationList = 0D0EEE051F88436900F6D729 /* Build configuration list for PBXNativeTarget "NeuralSimTests" */;
 			buildPhases = (
 				0D0EEDEA1F88436900F6D729 /* Sources */,
 				0D0EEDEB1F88436900F6D729 /* Frameworks */,
@@ -189,14 +189,14 @@
 			dependencies = (
 				0D0EEDF01F88436900F6D729 /* PBXTargetDependency */,
 			);
-			name = MWGuerraNeuralSimTests;
+			name = NeuralSimTests;
 			productName = MWGuerraNeuralSimTests;
-			productReference = 0D0EEDEE1F88436900F6D729 /* MWGuerraNeuralSimTests.xctest */;
+			productReference = 0D0EEDEE1F88436900F6D729 /* NeuralSimTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0D0EEDF81F88436900F6D729 /* MWGuerraNeuralSimUITests */ = {
+		0D0EEDF81F88436900F6D729 /* NeuralSimUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0D0EEE081F88436900F6D729 /* Build configuration list for PBXNativeTarget "MWGuerraNeuralSimUITests" */;
+			buildConfigurationList = 0D0EEE081F88436900F6D729 /* Build configuration list for PBXNativeTarget "NeuralSimUITests" */;
 			buildPhases = (
 				0D0EEDF51F88436900F6D729 /* Sources */,
 				0D0EEDF61F88436900F6D729 /* Frameworks */,
@@ -207,9 +207,9 @@
 			dependencies = (
 				0D0EEDFB1F88436900F6D729 /* PBXTargetDependency */,
 			);
-			name = MWGuerraNeuralSimUITests;
+			name = NeuralSimUITests;
 			productName = MWGuerraNeuralSimUITests;
-			productReference = 0D0EEDF91F88436900F6D729 /* MWGuerraNeuralSimUITests.xctest */;
+			productReference = 0D0EEDF91F88436900F6D729 /* NeuralSimUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -238,7 +238,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0D0EEDD51F88436900F6D729 /* Build configuration list for PBXProject "MWGuerraNeuralSim" */;
+			buildConfigurationList = 0D0EEDD51F88436900F6D729 /* Build configuration list for PBXProject "NeuralSim" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -252,9 +252,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0D0EEDD91F88436900F6D729 /* MWGuerraNeuralSim */,
-				0D0EEDED1F88436900F6D729 /* MWGuerraNeuralSimTests */,
-				0D0EEDF81F88436900F6D729 /* MWGuerraNeuralSimUITests */,
+				0D0EEDD91F88436900F6D729 /* NeuralSim */,
+				0D0EEDED1F88436900F6D729 /* NeuralSimTests */,
+				0D0EEDF81F88436900F6D729 /* NeuralSimUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -323,12 +323,12 @@
 /* Begin PBXTargetDependency section */
 		0D0EEDF01F88436900F6D729 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0D0EEDD91F88436900F6D729 /* MWGuerraNeuralSim */;
+			target = 0D0EEDD91F88436900F6D729 /* NeuralSim */;
 			targetProxy = 0D0EEDEF1F88436900F6D729 /* PBXContainerItemProxy */;
 		};
 		0D0EEDFB1F88436900F6D729 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0D0EEDD91F88436900F6D729 /* MWGuerraNeuralSim */;
+			target = 0D0EEDD91F88436900F6D729 /* NeuralSim */;
 			targetProxy = 0D0EEDFA1F88436900F6D729 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -483,7 +483,7 @@
 				DEVELOPMENT_TEAM = GD59775V2C;
 				INFOPLIST_FILE = MWGuerraNeuralSim/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mwguerra.MWGuerraNeuralSim;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mwguerra.neuralsim;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -498,7 +498,7 @@
 				DEVELOPMENT_TEAM = GD59775V2C;
 				INFOPLIST_FILE = MWGuerraNeuralSim/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mwguerra.MWGuerraNeuralSim;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mwguerra.neuralsim;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -518,7 +518,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MWGuerraNeuralSim.app/MWGuerraNeuralSim";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NeuralSim.app/NeuralSim";
 			};
 			name = Debug;
 		};
@@ -535,7 +535,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MWGuerraNeuralSim.app/MWGuerraNeuralSim";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NeuralSim.app/NeuralSim";
 			};
 			name = Release;
 		};
@@ -574,7 +574,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0D0EEDD51F88436900F6D729 /* Build configuration list for PBXProject "MWGuerraNeuralSim" */ = {
+		0D0EEDD51F88436900F6D729 /* Build configuration list for PBXProject "NeuralSim" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0D0EEE001F88436900F6D729 /* Debug */,
@@ -583,7 +583,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0D0EEE021F88436900F6D729 /* Build configuration list for PBXNativeTarget "MWGuerraNeuralSim" */ = {
+		0D0EEE021F88436900F6D729 /* Build configuration list for PBXNativeTarget "NeuralSim" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0D0EEE031F88436900F6D729 /* Debug */,
@@ -592,7 +592,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0D0EEE051F88436900F6D729 /* Build configuration list for PBXNativeTarget "MWGuerraNeuralSimTests" */ = {
+		0D0EEE051F88436900F6D729 /* Build configuration list for PBXNativeTarget "NeuralSimTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0D0EEE061F88436900F6D729 /* Debug */,
@@ -601,7 +601,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0D0EEE081F88436900F6D729 /* Build configuration list for PBXNativeTarget "MWGuerraNeuralSimUITests" */ = {
+		0D0EEE081F88436900F6D729 /* Build configuration list for PBXNativeTarget "NeuralSimUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0D0EEE091F88436900F6D729 /* Debug */,
