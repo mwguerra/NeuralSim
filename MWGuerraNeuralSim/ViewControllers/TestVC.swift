@@ -86,7 +86,7 @@ class TestVC: UIViewController, UITextFieldDelegate {
         default:
             NSLog("Erro no controle segmentado da infoView")
         }
-    }
+    } // viewDidAppear(_ animated: Bool)
     
     // Esconde a view de informações de treinamento e configuração para o dispositivo na horizontal. Mostra novamente ao virar para a vertical.
     override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval)
@@ -174,7 +174,7 @@ class TestVC: UIViewController, UITextFieldDelegate {
         
         }
         
-    }
+    } // runAction(_ sender: Any)
     
     @IBAction func retreinarAction(_ sender: Any) {
         
@@ -270,7 +270,7 @@ class TestVC: UIViewController, UITextFieldDelegate {
 
         }
 
-    }
+    } // retreinarAction(_ sender: Any)
     
     @IBAction func SegmentedControlChanged(_ sender: UISegmentedControl) {
         
@@ -299,7 +299,7 @@ class TestVC: UIViewController, UITextFieldDelegate {
             NSLog("Erro no controle segmentado da infoView")
         }
 
-    }
+    } // SegmentedControlChanged(_ sender: UISegmentedControl)
     
     /////////////////////////////////////////////////
     // MWGuerra: Rotina para a dissertação da FCU
@@ -373,9 +373,8 @@ class TestVC: UIViewController, UITextFieldDelegate {
                     
                 }
             }
-        }
-    
+        } // ExecutaTestesParaFCU()
+        
     }
-    
     
 }
