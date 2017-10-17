@@ -87,13 +87,13 @@ Cgo
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content"> A rede neural implementada é do tipo feedforward, com aprendizagem supervisionada utilizando backpropagation.
+                                        <string key="content"> A rede neural implementada é do tipo feedforward, com aprendizagem supervisionada utilizando backpropagation.
 
 São disponibilizadas 3 entradas, 1 saída e uma camada intermediária (hidden layer) com número variável de neurônios. Todas as configurações podem ser feitas a partir da tela de configuração.
 
 Redes neurais não entendem variáveis abstratas, como nomes ou se está quente ou frio. Elas precisam receber valores numéricos que consigam interpretar. Os valores mínimos e máximos de entrada e saída de cada neurônio depende, principalmente, da função de ativação escolhida para cada neurônio. Por este motivo é importante entender o comportamento e limites de cada função e suas derivadas.
 
-</mutableString>
+</string>
                                         <attributes>
                                             <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -109,13 +109,13 @@ Redes neurais não entendem variáveis abstratas, como nomes ou se está quente 
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <mutableString key="content">
+                                        <string key="content">
 Para facilitar os testes, foi implementada internamente à aplicação uma normalização, variando para cada função de ativação, que transporta as variáveis de entrada de 0 (zero) a 1 (um), para a faixa de operação da função. Isto significa que todas as variáveis inseridas nesta aplicação devem ser normalizadas considerando o valor mínimo de 0 (zero) e máximo de 1 (um).
 
 Exemplos de normalização de variáveis:
 
 • Sexo: Feminino (1) e Masculino (0)
-</mutableString>
+</string>
                                         <attributes>
                                             <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -659,6 +659,27 @@ Redes neurais, como esta, somente podem dar respostas para padrões que foram tr
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Importar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tK0-C2-vxy">
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="44.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Suporte Técnico" id="eEf-yr-qq7">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="E3b-O0-ZIM" style="IBUITableViewCellStyleDefault" id="fNG-C5-brg">
+                                        <rect key="frame" x="0.0" y="970.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fNG-C5-brg" id="faY-B2-0pv">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="44.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Feedback" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E3b-O0-ZIM">
                                                     <rect key="frame" x="15" y="0.0" width="325" height="44.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>

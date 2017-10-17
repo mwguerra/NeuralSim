@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class ConfigTableVC: UITableViewController, UITextFieldDelegate {
+class ConfigTableVC: UITableViewController, UITextFieldDelegate, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var epochSlider: UISlider!
     @IBOutlet weak var actionFunctionPicker: UIPickerView!
@@ -112,7 +113,7 @@ class ConfigTableVC: UITableViewController, UITextFieldDelegate {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+        return 5
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -125,6 +126,8 @@ class ConfigTableVC: UITableViewController, UITextFieldDelegate {
             return 1
         case 3: // Dados de Treinamento
             return 4    // ESCONDENDO A IMPORTAÇÃO QUE VAI SER DESENVOLVIDA DEPOIS
+        case 4: // Suporte técnico
+            return 1
         default:
             return 0
         }
@@ -162,7 +165,65 @@ class ConfigTableVC: UITableViewController, UITextFieldDelegate {
             tabBarController.selectedIndex = 2 // Terceira Aba (2 em índice 0) : Dados de Treinamento - Vai para a aba Treinamento
         }
         
+        // Suporte Técnico (section 4)
+        // Feedback (row 0)
+        if indexPath.section == 4 && indexPath.row == 0 {
+            
+            // E-mail para contato@mwguerra.com
+            // https://www.youtube.com/watch?v=02UnjWDWcis
+            // https://www.hackingwithswift.com/example-code/uikit/how-to-send-an-email
+            
+            if !MFMailComposeViewController.canSendMail() {
+
+                // Mensagem: Não há dados suficientes cadastrados para treinamento
+                
+                let alert = UIAlertController(title: "Importante", message: "Os serviços de e-mail não estão disponíveis. Por favor, envie sua mensagem para contato@mwguerra.com.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .`default`, handler: { _ in
+                    NSLog("Mail services are not available")
+                }))
+                self.present(alert, animated: true, completion: nil)
+                
+                return
+            }
+            
+            // Abre a janela de e-mail de feedback para contato@mwguerra.com
+            sendEMail()
+            
+        }
+        
+    } // tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    
+    func sendEMail() {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["contato@mwguerra.com"])
+            mail.setSubject("Feedback do app: NeuralSim")
+            mail.setMessageBody("", isHTML: false)
+            
+            present(mail, animated: true)
+        } else {
+            // show failure alert
+        }
     }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+    
+        switch result {
+        case MFMailComposeResult.cancelled:
+            NSLog("Mail cancelled")
+        case MFMailComposeResult.saved:
+            NSLog("Mail saved")
+        case MFMailComposeResult.sent:
+            NSLog("Mail sent")
+        case MFMailComposeResult.failed:
+            NSLog("Mail sent failure")
+        }
+        
+        controller.dismiss(animated: true)
+    
+    }
+    
 }
 extension ConfigTableVC: UIPickerViewDelegate, UIPickerViewDataSource {
 
