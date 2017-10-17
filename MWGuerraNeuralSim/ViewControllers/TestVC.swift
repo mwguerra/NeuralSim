@@ -84,7 +84,7 @@ class TestVC: UIViewController, UITextFieldDelegate {
             infoTextView.text.append("Taxa de aprendizado: \(NeuralNetController.learningRate)\n")
             
         default:
-            print("Erro no controle segmentado da infoView")
+            NSLog("Erro no controle segmentado da infoView")
         }
     }
     
@@ -151,11 +151,12 @@ class TestVC: UIViewController, UITextFieldDelegate {
                 returnValue = NeuralNetController.runNeuralNet(inputData: inputData)
                 resultLabel.text = "Valor de resposta: \(returnValue)"
             } else {
+                
                 // Mensagem de dados de entrada inválidos
                 
                 let alert = UIAlertController(title: "Atenção", message: "Alguns dados que você digitou não foram entendidos como numéricos. Verifique se há letras, pontuações erradas ou espeços nos campos de entrada.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .`default`, handler: { _ in
-                    NSLog("The \"OK\" alert occured.")
+                    NSLog("Alerta de entrada de dados inválida.")
                 }))
                 self.present(alert, animated: true, completion: nil)
                 
@@ -167,7 +168,7 @@ class TestVC: UIViewController, UITextFieldDelegate {
             
             let alert = UIAlertController(title: "Rede não treinada", message: "Acesse a aba de treinamento para popular os dados já conhecidos. São necessários, pelo menos, 2 dados na tabela para que a rede possa ser treinada.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .`default`, handler: { _ in
-                NSLog("The \"OK\" alert occured.")
+                NSLog("Alerta de rede não treinada.")
             }))
             self.present(alert, animated: true, completion: nil)
         
@@ -205,7 +206,8 @@ class TestVC: UIViewController, UITextFieldDelegate {
                     DispatchQueue.main.async{
                         // Atualiza progressView
                         self.progressView.setProgress(progressStep, animated: true)
-                        print("iAux: \(iAux) :: Epochs: \(NeuralNetController.trainEpochs) :: PROGRESS STEP: \(progressStep)")
+                        
+                        // print("iAux: \(iAux) :: Epochs: \(NeuralNetController.trainEpochs) :: PROGRESS STEP: \(progressStep)")
                     }
                 }
                 NeuralNetController.trainNetworkFinish()
@@ -250,7 +252,7 @@ class TestVC: UIViewController, UITextFieldDelegate {
                         self.infoTextView.text.append("Taxa de aprendizado: \(NeuralNetController.learningRate)\n")
                         
                     default:
-                        print("Erro no controle segmentado da infoView")
+                        NSLog("Erro no controle segmentado da infoView")
                     }
                     
                 }
@@ -262,7 +264,7 @@ class TestVC: UIViewController, UITextFieldDelegate {
             
             let alert = UIAlertController(title: "Atenção", message: "Para que possa treinar sua rede neural, é necessário que você tenha, pelo menos, 2 conjuntos de dados (2 linhas) na tabela de dados para treinamento.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .`default`, handler: { _ in
-                NSLog("The \"OK\" alert occured.")
+                NSLog("Alerta de dados insuficientes para treinar a rede neural.")
             }))
             self.present(alert, animated: true, completion: nil)
 
@@ -294,7 +296,7 @@ class TestVC: UIViewController, UITextFieldDelegate {
             infoTextView.text.append("Taxa de aprendizado: \(NeuralNetController.learningRate)\n")
 
         default:
-            print("Erro no controle segmentado da infoView")
+            NSLog("Erro no controle segmentado da infoView")
         }
 
     }
@@ -302,10 +304,8 @@ class TestVC: UIViewController, UITextFieldDelegate {
     /////////////////////////////////////////////////
     // MWGuerra: Rotina para a dissertação da FCU
     /////////////////////////////////////////////////
-    func ExecutaTestesParaFCU () -> String {
+    func ExecutaTestesParaFCU () {
         
-        var stringParaTextView = ""
-    
         // Epoch: 200, 500, 1000
         // NeuroniosHL: 2, 5, 10
         // LearningRate: 20%, 40%, 80%
@@ -374,8 +374,6 @@ class TestVC: UIViewController, UITextFieldDelegate {
                 }
             }
         }
-        
-        return stringParaTextView
     
     }
     

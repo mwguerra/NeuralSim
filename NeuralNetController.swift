@@ -300,9 +300,8 @@ class NeuralNetController: NSObject {
          for neuron in NeuralNetController.network!.layers[2].neurons {
          print("\(neuron.weights)\n")
          }
+         print ("\n\n=============================")
          */
-        
-        print ("\n\n=============================")
         
         NeuralNetController.trainedResults.removeAll()
         NeuralNetController.trainedResultsFCU.removeAll()   // Apenas para a dissertação da FCU. Sem utilidade para o App.
@@ -312,6 +311,7 @@ class NeuralNetController: NSObject {
             
             let trainedResult = "Entrada:\(NeuralNetController.inputData[i])\nSaída:\(results.result)\nEsperado:\(results.expected)\n\n"
             let trainedResultFCU = "\(results.result)\n"
+            
             // print(trainedResult)
             
             // Salva o texto para mostrar na view de informações
@@ -351,7 +351,8 @@ class NeuralNetController: NSObject {
         for i in 0..<NeuralNetController.inputData.count {
             let results = NeuralNetController.network!.validate(input: NeuralNetController.inputData[i], expected: NeuralNetController.outputData[i][0])
             
-            let trainedResult = "Entrada:\(NeuralNetController.inputData[i])\nSaída:\(results.result)\nPredição:\(results.expected)\n\n"
+            let trainedResult = "Entrada:\(NeuralNetController.inputData[i])\nSaída:\(results.result)\nEsperado:\(results.expected)\n\n"
+            
             // print(trainedResult)
             
             // Salva o texto para mostrar na view de informações
@@ -360,10 +361,11 @@ class NeuralNetController: NSObject {
     }
     
     class func runNeuralNet(inputData:[Double]) -> Double {
-        print ("\n\n=============================")
         
         let results = NeuralNetController.network!.runData(input: inputData)
-        print("For input:\(inputData) the prediction is:\(results)")
+
+        // print ("\n\n=============================")
+        // print("For input:\(inputData) the prediction is:\(results)")
         
         return results
     }
@@ -530,9 +532,9 @@ class Network {
     func train(inputs:[[Double]], expecteds:[[Double]]) {
         for (position, input) in inputs.enumerated() {
             let expectedOutputs = expecteds[position]
-            let currentOutputs = outputs(input: input)
-            let differencesBetweenPredictionAndExpected = zip(currentOutputs, expectedOutputs).map{$0-$1}
-            let meanSquaredError = sqrt(differencesBetweenPredictionAndExpected.map{$0*$0}.reduce(0,+))
+            // let currentOutputs = outputs(input: input)
+            // let differencesBetweenPredictionAndExpected = zip(currentOutputs, expectedOutputs).map{$0-$1}
+            // let meanSquaredError = sqrt(differencesBetweenPredictionAndExpected.map{$0*$0}.reduce(0,+))
             // print("Training loss: \(meanSquaredError)")
             backwardPropagationMethod(expected: expectedOutputs)
             updateWeightsAfterLearn()

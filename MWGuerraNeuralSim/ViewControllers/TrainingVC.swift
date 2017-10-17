@@ -94,7 +94,8 @@ class TrainingVC: UIViewController {
                     DispatchQueue.main.async{
                         // Atualiza progressView
                         self.progressView.setProgress(progressStep, animated: true)
-                        print("iAux: \(iAux) :: Epochs: \(NeuralNetController.trainEpochs) :: PROGRESS STEP: \(progressStep)")
+                        
+                        // print("iAux: \(iAux) :: Epochs: \(NeuralNetController.trainEpochs) :: PROGRESS STEP: \(progressStep)")
                     }
                 }
                 NeuralNetController.trainNetworkFinish()
@@ -122,7 +123,7 @@ class TrainingVC: UIViewController {
             
             let alert = UIAlertController(title: "Atenção", message: "Para que possa treinar sua rede neural, é necessário que você tenha, pelo menos, 2 conjuntos de dados (2 linhas) nesta tabela.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .`default`, handler: { _ in
-                NSLog("The \"OK\" alert occured.")
+                NSLog("Alerta de falta de dados suficientes para treinar a rede neural.")
             }))
             self.present(alert, animated: true, completion: nil)
         
@@ -242,7 +243,7 @@ class TrainingVC: UIViewController {
             // Mensagem: todos os campos devem ser preenchidos com valores numéricos
             let alert = UIAlertController(title: "Atenção", message: mensagem, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .`default`, handler: { _ in
-                NSLog("The \"OK\" alert occured.")
+                NSLog("Alerta de entrada de dados inválida.")
             }))
             self.present(alert, animated: true, completion: nil)
         
