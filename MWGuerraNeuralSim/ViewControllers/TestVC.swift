@@ -91,11 +91,14 @@ class TestVC: UIViewController, UITextFieldDelegate {
     // Esconde a view de informações de treinamento e configuração para o dispositivo na horizontal. Mostra novamente ao virar para a vertical.
     override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval)
     {
-        if toInterfaceOrientation == .landscapeLeft || toInterfaceOrientation == .landscapeRight{
-            infoView.isHidden = true
-        }
-        else{
-            infoView.isHidden = false
+        // Somente oculta em iPhones
+        if UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.phone {
+            if toInterfaceOrientation == .landscapeLeft || toInterfaceOrientation == .landscapeRight{
+                infoView.isHidden = true
+            }
+            else{
+                infoView.isHidden = false
+            }
         }
     }
     
